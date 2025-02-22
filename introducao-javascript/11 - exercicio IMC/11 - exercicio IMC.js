@@ -12,5 +12,10 @@ mySubmit.onclick = function() {
 
     let imc = peso / (altura * altura);
 
-    imcP.textContent = `Seu imc é: ${imc}`;
+    if(isNaN(peso) || isNaN(altura) || altura <= 0 || peso <= 0){
+        imcP.textContent = `Insira um valor válido.`;
+        return;
+    }
+
+    imcP.textContent = `Seu imc é: ${imc.toFixed(2)}`;
 }
